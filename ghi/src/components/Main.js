@@ -34,8 +34,11 @@ export default function Main() {
     const useScrollPosition = () => {
         const [testScroll, setTestScroll] = useState(window.pageYOffset);
 
-        const onScroll = () =>{
-            setTestScroll(window.pageYOffset);
+        const onScroll = () => {
+            const threshold = 880;  // set the threshold for the limiter
+            if (window.pageYOffset > threshold) {  // only start the animation if the scroll position is greater than the threshold
+                setTestScroll(window.pageYOffset);
+            }
         };
 
         useEffect(() => {
@@ -152,37 +155,37 @@ export default function Main() {
                 <div className='jobu-wrap'>
                     <div className='text-parent z-1 bg-transparent'>
                         <h1 className='h12'
-                        style={{
-                            transform: `translate3d(-${position / 13}px, -${position * 0.1}px, 0px)`
-                        }}
+                            style={{
+                                transform: position >= threshold ? `translate3d(-${position / 4 - 150}px, -${position * 0.1}px, 0px)` : `none`
+                            }}
                         >
                             A FULLSTACK DEVELOPER
                         </h1>
                         <h1 className='h12'
-                        style={{
-                            transform: `translate3d(${position / 80}px, -${position * 0.1}px, 0px)`
-                        }}
+                            style={{
+                                transform: position >= threshold ? `translate3d(${position / 4 - 360}px, -${position * 0.1}px, 0px)` : `none`
+                            }}
                         >
                             WITH A CREATIVE MIND
                         </h1>
                     </div>
                     <img className="jobu" src={JOBI}
-                    style={{
-                        transform: `translate3d(-50%, calc(-${position * 0.4}px - -30%), 0)`,
-                    }}
+                        style={{
+                            transform: `translate3d(-50%, calc(-${position * 0.26}px - -30%), 0)`,
+                        }}
                     />
                     <div className='text-parent z-10 bg-transparent'>
                         <h1 className='h12 out'
-                        style={{
-                            transform: `translate3d(-${position / 13}px, -${position * 0.1}px, 0px)`
-                        }}
+                            style={{
+                                transform: position >= threshold ? `translate3d(-${position / 4 - 150}px, -${position * 0.1}px, 0px)` : `none`
+                            }}
                         >
                             A FULLSTACK DEVELOPER
                         </h1>
-                        <h1 className='h12 out'
-                        style={{
-                            transform: `translate3d(${position / 80}px, -${position * 0.1}px, 0px)`
-                        }}
+                        <h1 className='h12 out '
+                            style={{
+                                transform: position >= threshold ? `translate3d(${position / 4 - 360}px, -${position * 0.1}px, 0px)` : `none`
+                            }}
                         >
                             WITH A CREATIVE MIND
                         </h1>

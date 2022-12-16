@@ -22,7 +22,7 @@ body {
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
     height: 100vh;
-  }
+}
 
 .top_title {
     position: absolute;
@@ -182,7 +182,7 @@ a:hover {
     z-index: 4;
     display: flex;
     background-color: transparent;
-    
+
 }
 
 .image {
@@ -226,12 +226,12 @@ a:hover {
 }
 
 
-.about{
+.about {
     text-transform: uppercase;
     text-decoration: underline;
 }
 
-#p-text{
+#p-text {
     letter-spacing: 0.3vh;
     display: block;
     word-wrap: break-word;
@@ -239,13 +239,14 @@ a:hover {
     width: 221px;
 }
 
-.b1{
+.b1 {
     display: flex;
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
 }
-.b2{
+
+.b2 {
     display: flex;
     letter-spacing: 0.5vh;
     display: block;
@@ -256,7 +257,7 @@ a:hover {
 }
 
 
-.hug{
+.hug {
     white-space: nowrap;
     font-size: 7.1vw;
     color: #ffffff;
@@ -266,26 +267,32 @@ a:hover {
 }
 
 
-.jobu-wrap{
+.jobu-wrap {
     color: white;
-    
+
 }
 
-.jobu{
+.jobu {
     position: absolute;
     object-fit: contain;
     left: 50%;
     z-index: 2;
-}
-
-.text-parent{
-    position: absolute;
-    top: 200%;
     background-color: transparent;
-    
+    filter: grayscale(100%) brightness(70%) contrast(90%);
+    transition: filter 0.3s, brightness 0.3s, contrast 0.3s;
 }
 
-.h12{
+.jobu:hover {
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+}
+
+.text-parent {
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none
+}
+
+.h12 {
     color: white;
     line-height: 110%;
     font-size: 8.1vw;
@@ -295,11 +302,13 @@ a:hover {
     font-weight: bold;
     background-color: transparent;
     margin-left: 100px;
-    
+    font-family: sequel, sans-serif;
+    pointer-events: none;
 }
-.out{
+
+.out {
     -webkit-text-stroke: 5px white;
     text-stroke: 1px white;
     color: transparent;
-
+    pointer-events: none
 }
