@@ -182,12 +182,15 @@ a:hover {
     z-index: 4;
     display: flex;
     background-color: transparent;
-
+    z-index: 2;
 }
 
 .image {
     width: 100%;
     background-color: transparent;
+    position: relative;
+    top: 0;
+    z-index: 10;
 }
 
 #introduction {
@@ -202,6 +205,7 @@ a:hover {
     left: 0;
     pointer-events: none;
     font-size: 3vh;
+    
 }
 
 .span-p {
@@ -295,20 +299,45 @@ a:hover {
 .h12 {
     color: white;
     line-height: 110%;
-    font-size: 8.1vw;
+    font-size: 9vw;
     white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 0.01rem;
     font-weight: bold;
     background-color: transparent;
-    margin-left: 100px;
     font-family: sequel, sans-serif;
     pointer-events: none;
+    
 }
 
 .out {
-    -webkit-text-stroke: 5px white;
+    -webkit-text-stroke: 2px white;
     text-stroke: 1px white;
     color: transparent;
     pointer-events: none
+    
+}
+
+
+#intro{
+    margin-top: 600px;
+    padding-left: 40px;
+    background-color: transparent;
+
+}
+
+.moving-container{
+    width: 400px;
+    position: absolute;
+    right: 3%;
+    background-color: transparent;
+
+}
+
+.papa{
+    object-fit: contain;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+    filter: grayscale(100%) brightness(90%) contrast(80%);
 }
