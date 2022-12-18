@@ -216,7 +216,7 @@ a:hover {
 }
 
 .main-1 {
-    height: 400vh;
+    height: 220vh;
 }
 
 
@@ -331,7 +331,7 @@ a:hover {
     position: absolute;
     right: 3%;
     background-color: transparent;
-
+    overflow: hidden;
 }
 
 .papa{
@@ -340,4 +340,29 @@ a:hover {
     z-index: 2;
     background-color: transparent;
     filter: grayscale(100%) brightness(90%) contrast(80%);
+}
+
+
+.fixing{
+    position: absolute;
+    bottom: 70%;
+    background-color: transparent;
+}
+
+.main-2{
+    height: 100vh;
+    margin-top: 200px;
+    background-color: transparent;
+    
+}
+
+.banner{
+    white-space: nowrap;
+    font-size: 7.1vw;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-left: 40px;
+    font-family: sequel, sans-serif;
 }
