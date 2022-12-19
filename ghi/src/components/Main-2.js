@@ -30,19 +30,15 @@ export default function Main2() {
 
         <div className='main-2'>
             
-            <motion.div 
-            initial='initial'
-            animate='animate'
-            exit='exit'
-            variants={works}
+            <div
             className='banner'
             >
-                <motion.span variants={letters}>W</motion.span>
-                <motion.span variants={letters}>O</motion.span>
-                <motion.span variants={letters}>R</motion.span>
-                <motion.span variants={letters}>K</motion.span>
-                <motion.span variants={letters}>S</motion.span>
-            </motion.div>
+                <span>W</span>
+                <span>O</span>
+                <span>R</span>
+                <span>K</span>
+                <span>S</span>
+            </div>
 
         </div>
     )
