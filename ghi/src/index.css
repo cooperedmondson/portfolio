@@ -215,9 +215,7 @@ a:hover {
     font-family: 'Kaushan Script', cursive;
 }
 
-.main-1 {
-    height: 250vh;
-}
+
 
 
 
@@ -328,6 +326,7 @@ a:hover {
 
 .moving-container{
     width: 400px;
+    max-width: 600px;
     position: absolute;
     right: 3%;
     background-color: transparent;
@@ -349,12 +348,7 @@ a:hover {
     background-color: transparent;
 }
 
-.main-2{
-    height: 100vh;
-    margin-top: 300px;
-    background-color: transparent;
-    
-}
+
 
 .banner{
     white-space: nowrap;
@@ -365,4 +359,215 @@ a:hover {
     letter-spacing: 0.06em;
     padding-left: 40px;
     font-family: sequel, sans-serif;
+}
+
+
+.pr_items{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-top: 200px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -1px;
+    -webkit-animation: show_in 1s;
+    animation: show_in 1s;
+    color: white;
+    background-color: transparent;
+    
+
+}
+
+.p-item{
+    position: relative;
+    padding: 40px 25px;
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+
+.featured{
+    text-transform: uppercase;
+    font-size: 4vw;
+    font-weight: 600;
+    letter-spacing: .2vw;
+    line-height: 1.1;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 4vw;
+}
+
+.featured-subtext{
+    padding-left: 1vw;
+    font-size: 1vw;
+    letter-spacing: .1vw;
+    background-color: transparent;
+
+}
+
+.proj-title{
+    padding-right: 4vw;
+    font-size: 6vw;
+    font-weight: 800;
+    letter-spacing: -.2vw;
+    line-height: 1.1;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    padding-left: 15vw;
+    text-transform: uppercase;
+
+}
+
+.proj-desc{
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 1.9vw;
+    margin-left: -10px;
+    pointer-events: none;
+    background-color: transparent;
+
+}
+.proj-title2{
+    padding-right: 4vw;
+    font-size: 6vw;
+    font-weight: 800;
+    letter-spacing: -.2vw;
+    line-height: 1.1;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    padding-left: 59vw;
+    text-transform: uppercase;
+
+}
+
+.proj-desc2{
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 1.9vw;
+    margin-left: -10px;
+    pointer-events: none;
+    background-color: transparent;
+
+}
+.proj-title3{
+    padding-right: 4vw;
+    font-size: 6vw;
+    font-weight: 800;
+    letter-spacing: -.2vw;
+    line-height: 1.1;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    padding-left: 4vw;
+    text-transform: uppercase;
+
+}
+
+.proj-desc3{
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 1.9vw;
+    margin-left: -10px;
+    pointer-events: none;
+    background-color: transparent;
+    
+
+}
+.line {
+    height: .1px;
+    width: initial;
+    transition: width 1s ease-in-out;
+    border: 1px solid white;
+    bottom: 50%;
+    position: absolute;
+    background-color: transparent;
+
+  }
+
+  .line.expanded{
+    width: 14%;
+    background-color: transparent;
+
+  }
+
+.sub-line{
+    height: .1px;
+    width: 22%;
+    border: 1px solid white;
+    right: 0;
+    bottom: 50%;
+    position: absolute;
+    background-color: transparent;
+
+}
+
+.line2 {
+    height: .1px;
+    width: 58%;
+    border: 1px solid white;
+    bottom: 50%;
+    position: absolute;
+    background-color: transparent;
+
+  }
+
+.sub-line2{
+    height: .1px;
+    width: 4%;
+    border: 1px solid white;
+    right: 0;
+    bottom: 50%;
+    position: absolute;
+    background-color: transparent;
+
+}
+
+.line3 {
+    height: .1px;
+    width: 3%;
+    border: 1px solid white;
+    bottom: 50%;
+    position: absolute;
+    background-color: transparent;
+
+  }
+
+.sub-line3{
+    height: .1px;
+    width: 60%;
+    border: 1px solid white;
+    right: 0;
+    bottom: 50%;
+    position: absolute;
+    background-color: transparent;
+
+}
+
+.svgeez{
+    background-color: transparent;
+    scale: 0.3;
+}
+
+.main-one{
+    margin-bottom: 200px;
+}
+.main-two{
+    padding-top: 10px;
+    margin-bottom: 200px;
+    
+}
+.main-three{
+    margin-bottom: 100px;
+    height: 100vh;
 }
