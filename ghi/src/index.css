@@ -148,13 +148,13 @@ nav a {
     background-color: transparent;
 }
 
-a {
+.a {
     text-decoration: none;
     position: relative;
     background-color: transparent;
 }
 
-a:before {
+.a:before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -168,11 +168,11 @@ a:before {
 
 }
 
-a:hover:before {
+.a:hover:before {
     transform: scaleX(1);
 }
 
-a:hover {
+.a:hover {
     color: #B54036;
 }
 
@@ -568,6 +568,72 @@ a:hover {
     
 }
 .main-three{
-    margin-bottom: 100px;
+    margin-bottom: 300px;
     height: 100vh;
+}
+
+
+.footies{
+    margin-top: 40px;
+}
+
+.testing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+}
+
+.contact{
+    color: white;
+    padding-left: 3vw;
+    background-color: transparent;
+    width: 300px;
+    transform: translate(0vw, -44%);
+}
+
+.contact-p{
+    font-family: circular, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: default;
+    font-weight: normal;
+    background-color: transparent;
+    letter-spacing: .2vw;
+}
+
+
+.contact-a{
+    border-bottom: 1px solid rgba(240, 240, 243, .8);
+    display: flex;
+    padding: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: .3vw;
+    line-height: .9;
+    text-decoration: none;
+    position: relative;
+    background-color: transparent;
+    
+}
+
+.contact-a:before{
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .75s ease-out;
+}
+.contact-a:hover:before {
+    transform: scaleX(.6);
+}
+
+.contact-a:hover {
+    color: #2E2E2E;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Main from './Main'
 import Main2 from './Main-2'
 import Main3 from './Main-3'
-
+import Footer from './Footer'
 export default function Contain() {
     return (
         <div>
@@ -14,6 +14,9 @@ export default function Contain() {
             </div>
             <div className="main-three">
                 <Main2 />
+            </div>
+            <div className="footies">
+                <Footer />
             </div>
         </div>
     )

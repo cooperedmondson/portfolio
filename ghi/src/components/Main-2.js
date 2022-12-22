@@ -1,6 +1,6 @@
 import { AnimatePresence, useAnimation, motion } from 'framer-motion';
 import React, { useState, useRef, useEffect } from 'react';
-import GOOGLY from '../assets/GOOGLY.png'
+import BASE from '../assets/BASE.png'
 
 
 
@@ -78,30 +78,7 @@ export default function Main2() {
     };
 
 
-    const [cursorX, setCursorX] = useState(0);
-    const [cursorY, setCursorY] = useState(0);
-    const [isHovering, setIsHovering] = useState(false);
 
-    useEffect(() => {
-        const handleMouseMove = (event) => {
-            setCursorX(event.clientX - 170);
-            setCursorY(event.clientY - 580);
-        }
-
-        window.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        }
-    }, []);
-
-    const handleMouseEnter = () => {
-        setIsHovering(true);
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovering(false);
-    }
 
 
     return (
@@ -122,10 +99,7 @@ export default function Main2() {
                             ( "3" )
                         </span>
                     </div>
-                    <div className='p-item'
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    <div className='p-item'>
                         <div ref={wrapperRef} style={style} className="line" />
                         <div className='proj-title'>
                             <div className=' bg-transparent'
@@ -134,18 +108,6 @@ export default function Main2() {
                         <div className='proj-desc'>
                             / 2022.
                         </div>
-                        {isHovering && (
-                            <img
-                                src={GOOGLY}
-                                style={{
-                                    position: 'absolute',
-                                    left: cursorX,
-                                    top: cursorY,
-                                    backgroundColor: 'transparent',
-                                    scale: '0.2',
-                                }}
-                            />
-                        )}
                         <div class="sub-line" ref={wrapperRef} style={style2} />
                     </div>
                     <div className='p-item'>

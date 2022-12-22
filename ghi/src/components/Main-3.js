@@ -70,12 +70,9 @@ export default function Main3() {
                         <br />
                         <div className='boh'>
                             <p className='b2'>
-                                I'm a recent graduate of Hack Reactor's
-                                bootcamp. I've also graduated from Abraham
-                                Baldwin Agricultural College with my Associates
-                                of Science. I love the outdoors, movies, and learning
-                                about new technologies. Feel free to connect with me and
-                                chat!
+                                I'm a Junior Full Stack Developer and
+                                a recent graduate of the Software Engineering
+                                program at Hack Reactor. 
                             </p>
                         </div>
                     </div>
