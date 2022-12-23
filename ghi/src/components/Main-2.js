@@ -1,7 +1,9 @@
 import { AnimatePresence, useAnimation, motion } from 'framer-motion';
 import React, { useState, useRef, useEffect } from 'react';
-import BASE from '../assets/BASE.png'
+import UPSIDE from '../assets/UPSIDE.png'
+import AIR from '../assets/UPSIDE.png'
 
+import { gsap, TweenMax } from "gsap";
 
 
 export default function Main2() {
@@ -78,8 +80,70 @@ export default function Main2() {
     };
 
 
+    const didAnimate = useRef(false);
+    const timeline_home = gsap.timeline();
+
+    useEffect(() => {
+        if (didAnimate.current) {
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    timeline_home.from("#testy", {
+                        duration: 1.8,
+                        skewY: 20,
+                        y: 400,
+                        stagger: {
+                            amount: .48,
+                        }
+                    }, "-=1.2")
+                    timeline_home.from("#dates", {
+                        duration: 1.2,
+                        skewY: 30,
+                        y: 500,
+                        stagger: {
+                            amount: .48,
+                        }
+                    }, "-=1.2");
+                    observer.disconnect();
+                }
+            });
+        });
+
+        const el = document.querySelector('#testy');
+        observer.observe(el);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
 
 
+    const hoverDiv = useRef(null);
+    const image = useRef(null);
+
+    useEffect(() => {
+        // Set the initial alpha of the image to 0
+        TweenMax.set(image.current, {
+            alpha: 0
+        });
+    }, []); // The empty array ensures that the effect only runs on mount
+
+    const handleMouseMove = (event) => {
+        TweenMax.to(image.current, 0, {
+            x: event.pageX - hoverDiv.current.offsetLeft - image.current.offsetWidth / 2,
+            y: event.pageY - hoverDiv.current.offsetTop - image.current.offsetHeight / 2 - 25,
+            alpha: 1 // Fade in the image when the mouse moves
+        });
+    }
+
+    const handleMouseLeave = () => {
+        TweenMax.to(image.current, 0.5, {
+            alpha: 0
+        });
+    }
 
     return (
 
@@ -99,38 +163,54 @@ export default function Main2() {
                             ( "3" )
                         </span>
                     </div>
-                    <div className='p-item'>
+                    <div className='p-item'
+                        ref={hoverDiv}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                    >
+
                         <div ref={wrapperRef} style={style} className="line" />
                         <div className='proj-title'>
-                            <div className=' bg-transparent'
-                            >Purely Puptonic</div>
+                            <a href='https://www.youtube.com/watch?v=aeTpUjq7xak' className='a-wrap'>
+                                <div className=' bg-transparent' id='testy' >
+                                    Purely Puptonic
+                                </div>
+                            </a>
                         </div>
-                        <div className='proj-desc'>
+                        <div className='proj-desc' id='dates'>
                             / 2022.
                         </div>
-                        <div class="sub-line" ref={wrapperRef} style={style2} />
+                        <div className="sub-line" ref={wrapperRef} style={style2} />
+                        <img src={UPSIDE} className="upside" ref={image} />
                     </div>
-                    <div className='p-item'>
-                        <div class="line2" ref={wrapperRef} style={style3} />
+                    <div className='p-item'
+                    ref={hoverDiv}
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                    >
+                        <div className="line2" ref={wrapperRef} style={style3} />
                         <div className='proj-title2'>
-                            <div className=' bg-transparent'
-                            >Car Car</div>
+                            <div className=' bg-transparent' id='testy'>
+                                Car Car
+                            </div>
                         </div>
-                        <div className='proj-desc2'>
+                        <div className='proj-desc2' id='dates'>
                             / 2022.
                         </div>
                         <div class="sub-line2" ref={wrapperRef} style={style4} />
+                        <img src={UPSIDE} className="upside" ref={image} />
                     </div>
                     <div className='p-item'>
-                        <div class="line3" ref={wrapperRef} style={style5} />
+                        <div className="line3" ref={wrapperRef} style={style5} />
                         <div className='proj-title3'>
-                            <div className=' bg-transparent'
-                            >Stocks</div>
+                            <div className=' bg-transparent' id='testy'>
+                                Stocks
+                            </div>
                         </div>
-                        <div className='proj-desc3'>
+                        <div className='proj-desc3' id='dates'>
                             / 2022.
                         </div>
-                        <div class="sub-line3" ref={wrapperRef} style={style6} />
+                        <div className="sub-line3" ref={wrapperRef} style={style6} />
                     </div>
                 </div>
             </div>

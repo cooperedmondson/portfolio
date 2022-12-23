@@ -5,7 +5,7 @@ import { useAnimation, motion } from 'framer-motion';
 
 
 export default function Main() {
-    console.log(window.pageYOffset)
+
 
     const useScrollPosition = () => {
         const [testScroll, setTestScroll] = useState(window.pageYOffset);

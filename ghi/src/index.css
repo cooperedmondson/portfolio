@@ -338,6 +338,7 @@ nav a {
     width: 100%;
     z-index: 2;
     background-color: transparent;
+    border-radius: 35px;
     filter: grayscale(100%) brightness(90%) contrast(80%);
 }
 
@@ -382,7 +383,7 @@ nav a {
 
 .p-item{
     position: relative;
-    padding: 40px 25px;
+    padding: 40px 0px;
     display: flex;
     width: 100%;
     background-color: transparent;
@@ -636,4 +637,17 @@ nav a {
 
 .contact-a:hover {
     color: #2E2E2E;
+}
+
+
+.upside{
+    position: absolute;
+    background-color: transparent;
+    scale: 0.091;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.a-wrap{
+    pointer-events: auto;
 }
