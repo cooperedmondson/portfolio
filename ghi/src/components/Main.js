@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import fawef from '../assets/fawef.png'
 import JOBI from '../assets/JOBI.gif'
-import { useAnimation, motion } from 'framer-motion';
+import gsap from 'gsap'
 
 
 export default function Main() {
@@ -24,6 +24,29 @@ export default function Main() {
     };
 
     const position = useScrollPosition();
+    const image = useRef(null);
+    const aboutLink = useRef(null);
+    const projectsLink = useRef(null);
+    const githubLink = useRef(null);
+    const contactLink = useRef(null);
+    useEffect(() => {
+        gsap.to(image.current, {
+            duration: 3, 
+            opacity: 0, 
+            delay: 1, 
+            ease: 'power2.inOut', 
+            opacity: 1,
+        });
+        gsap.to([aboutLink.current, projectsLink.current, githubLink.current, contactLink.current], {
+            duration: 4,
+            opacity: 1,
+            y: 20,
+            stagger: {
+                amount: 0.6,
+            },
+            ease: 'power2.inOut',
+        });
+    }, []);
 
 
     return (
@@ -31,21 +54,18 @@ export default function Main() {
             <div className='grain-effect' />
             <nav className=' bg-transparent text-white uppercase font-semibold' id='col-3'>
                 <div className='bg-transparent'>
-                    <a  className="a" href='#about'>About</a>
+                    <a ref={aboutLink} className="a" href='#about' id='animate'>About</a>
                     <br />
-                    <a  className="a" href='#projects'>Projects</a>
+                    <a ref={projectsLink} className="a" href='#projects' id='animate'>Projects</a>
                 </div>
                 <div className='bg-transparent'>
-                    <a 
-                     className="a" href='https://github.com/cooperedmondson'>Github</a>
-                    <br/>
-                    <a  className="a" href='#contact'>
-                        Contact
-                    </a>
+                    <a ref={githubLink} id='animate' className="a" href='https://github.com/cooperedmondson'>Github</a>
+                    <br />
+                    <a ref={contactLink} id='animate' className="a" href='#contact'>Contact</a>
                 </div>
             </nav>
             <div className='rotate'>
-                <img src={fawef} className='image' />
+                <img ref={image} src={fawef} className='image' />
             </div>
             <div className='py-40'>
             </div>

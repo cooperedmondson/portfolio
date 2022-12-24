@@ -152,6 +152,7 @@ nav a {
     text-decoration: none;
     position: relative;
     background-color: transparent;
+    opacity: 0;
 }
 
 .a:before {
@@ -165,15 +166,15 @@ nav a {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.45s ease-out;
-
 }
 
 .a:hover:before {
     transform: scaleX(1);
+    
 }
 
 .a:hover {
-    color: #B54036;
+    color: #4A4A4A;
 }
 
 
@@ -191,6 +192,7 @@ nav a {
     position: relative;
     top: 0;
     z-index: 10;
+    opacity: 0;
 }
 
 #introduction {
@@ -643,11 +645,20 @@ nav a {
 .upside{
     position: absolute;
     background-color: transparent;
-    scale: 0.091;
     z-index: 100;
     pointer-events: none;
+    width: 300px;
+    border-radius: 20px;
+    height: 200px;
 }
 
 .a-wrap{
     pointer-events: auto;
+}
+
+.earth{
+    /* z-index: 100000; */
+    position: relative;
+    width: 40px;
+    background-color: transparent;
 }

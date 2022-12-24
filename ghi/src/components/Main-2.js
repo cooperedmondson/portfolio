@@ -133,8 +133,8 @@ export default function Main2() {
 
     const handleMouseMove = (event) => {
         TweenMax.to(image.current, 0, {
-            x: event.pageX - hoverDiv.current.offsetLeft - image.current.offsetWidth / 2,
-            y: event.pageY - hoverDiv.current.offsetTop - image.current.offsetHeight / 2 - 25,
+            x: event.pageX - hoverDiv.current.offsetLeft - image.current.offsetWidth / 2 + 130,
+            y: event.pageY - hoverDiv.current.offsetTop - image.current.offsetHeight / 2 + 47,
             alpha: 1 // Fade in the image when the mouse moves
         });
     }
@@ -181,12 +181,15 @@ export default function Main2() {
                             / 2022.
                         </div>
                         <div className="sub-line" ref={wrapperRef} style={style2} />
-                        <img src={UPSIDE} className="upside" ref={image} />
+                        <div className="upside" ref={image}>
+                            <img src={UPSIDE}  className="earth"/>
+                            <div>
+
+                            </div>
+                        </div>
                     </div>
                     <div className='p-item'
-                    ref={hoverDiv}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
+                    
                     >
                         <div className="line2" ref={wrapperRef} style={style3} />
                         <div className='proj-title2'>
@@ -198,7 +201,7 @@ export default function Main2() {
                             / 2022.
                         </div>
                         <div class="sub-line2" ref={wrapperRef} style={style4} />
-                        <img src={UPSIDE} className="upside" ref={image} />
+                        
                     </div>
                     <div className='p-item'>
                         <div className="line3" ref={wrapperRef} style={style5} />

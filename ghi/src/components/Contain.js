@@ -3,7 +3,14 @@ import Main from './Main'
 import Main2 from './Main-2'
 import Main3 from './Main-3'
 import Footer from './Footer'
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+
+
+
 export default function Contain() {
+
+    
     return (
         <div>
             <div className="main-one">
