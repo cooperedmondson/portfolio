@@ -29,6 +29,7 @@ export default function Main() {
     const projectsLink = useRef(null);
     const githubLink = useRef(null);
     const contactLink = useRef(null);
+
     useEffect(() => {
         gsap.to(image.current, {
             duration: 3, 
@@ -47,6 +48,10 @@ export default function Main() {
             ease: 'power2.inOut',
         });
     }, []);
+
+
+    
+    
 
 
     return (
@@ -86,7 +91,7 @@ export default function Main() {
                         WITH A CREATIVE MIND
                     </h1>
                 </div>
-                <img className="jobu" src={JOBI}
+                <img className="jobu" src={JOBI} 
                     style={{
                         transform: `translate3d(-50%, calc(-${position * 0.26}px - 0%), 0)`,
                     }}

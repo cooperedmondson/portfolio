@@ -1,7 +1,8 @@
 import { AnimatePresence, useAnimation, motion } from 'framer-motion';
 import React, { useState, useRef, useEffect } from 'react';
 import UPSIDE from '../assets/UPSIDE.png'
-import AIR from '../assets/UPSIDE.png'
+import RIGHTSIDE from '../assets/RIGHTSIDE.png'
+import AYO from '../assets/AYO.png'
 
 import { gsap, TweenMax } from "gsap";
 
@@ -100,12 +101,12 @@ export default function Main2() {
                         }
                     }, "-=1.2")
                     timeline_home.from("#dates", {
-                        duration: 1.2,
-                        skewY: 30,
-                        y: 500,
+                        duration: 4,
+                        opacity: 0,
                         stagger: {
-                            amount: .48,
-                        }
+                            amount: 0.6,
+                        },
+                        ease: 'power2.inOut',
                     }, "-=1.2");
                     observer.disconnect();
                 }
@@ -120,30 +121,81 @@ export default function Main2() {
         };
     }, []);
 
-
-    const hoverDiv = useRef(null);
-    const image = useRef(null);
+    const hoverDiv1 = useRef(null);
+    const hoverDiv2 = useRef(null);
+    const hoverDiv3 = useRef(null);
+    const image1 = useRef(null);
+    const image2 = useRef(null);
+    const image3 = useRef(null);
 
     useEffect(() => {
-        // Set the initial alpha of the image to 0
-        TweenMax.set(image.current, {
-            alpha: 0
-        });
+        // Set the initial alpha of the images to 0
+        TweenMax.set(image1.current, { alpha: 0 });
+        TweenMax.set(image2.current, { alpha: 0 });
+        TweenMax.set(image3.current, { alpha: 0 });
     }, []); // The empty array ensures that the effect only runs on mount
 
-    const handleMouseMove = (event) => {
-        TweenMax.to(image.current, 0, {
-            x: event.pageX - hoverDiv.current.offsetLeft - image.current.offsetWidth / 2 + 130,
-            y: event.pageY - hoverDiv.current.offsetTop - image.current.offsetHeight / 2 + 47,
-            alpha: 1 // Fade in the image when the mouse moves
+    // Create event handlers for each div
+    const handleMouseMove1 = (event) => {
+        TweenMax.to(image1.current, 0, {
+            x: event.pageX - hoverDiv1.current.offsetLeft - image1.current.offsetWidth / 2 + 130,
+            y: event.pageY - hoverDiv1.current.offsetTop - image1.current.offsetHeight / 2 + 47,
+            alpha: 1, // Fade in the image when the mouse moves
         });
-    }
+    };
 
-    const handleMouseLeave = () => {
-        TweenMax.to(image.current, 0.5, {
-            alpha: 0
+    const handleMouseLeave1 = () => {
+        TweenMax.to(image1.current, 0.5, {
+            alpha: 0,
         });
-    }
+    };
+
+    const handleMouseMove2 = (event) => {
+        TweenMax.to(image2.current, 0, {
+            x: event.pageX - hoverDiv2.current.offsetLeft - image2.current.offsetWidth / 2 + 130,
+            y: event.pageY - hoverDiv2.current.offsetTop - image2.current.offsetHeight / 2 + 47,
+            alpha: 1, // Fade in the image when the mouse moves
+        });
+    };
+
+    const handleMouseLeave2 = () => {
+        TweenMax.to(image2.current, 0.5, {
+            alpha: 0,
+        });
+    };
+
+    const handleMouseMove3 = (event) => {
+        TweenMax.to(image3.current, 0, {
+            x: event.pageX - hoverDiv3.current.offsetLeft - image3.current.offsetWidth / 2 + 130,
+            y: event.pageY - hoverDiv3.current.offsetTop - image3.current.offsetHeight / 2 + 47,
+            alpha: 1, // Fade in the image when the mouse moves
+        });
+    };
+
+    const handleMouseLeave3 = () => {
+        TweenMax.to(image3.current, 0.5, {
+            alpha: 0,
+        });
+    };
+
+    useEffect(() => {
+        const text = document.querySelector('.behance p');
+        const text2 = document.querySelector('.behances p');
+        const text3 = document.querySelector('.behancess p');
+        text.innerHTML = text.innerText.split('').map(
+            (char, i) =>
+                `<span style="transform: rotate(${i * 8.3}deg)">${char}</span>`
+        ).join('');
+        text2.innerHTML = text2.innerText.split('').map(
+            (char, i) =>
+                `<span style="transform: rotate(${i * 8.3}deg)">${char}</span>`
+        ).join('');
+        text3.innerHTML = text3.innerText.split('').map(
+            (char, i) =>
+                `<span style="transform: rotate(${i * 8.3}deg)">${char}</span>`
+        ).join('');
+    }, [])
+
 
     return (
 
@@ -164,9 +216,9 @@ export default function Main2() {
                         </span>
                     </div>
                     <div className='p-item'
-                        ref={hoverDiv}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
+                        ref={hoverDiv1}
+                        onMouseMove={handleMouseMove1}
+                        onMouseLeave={handleMouseLeave1}
                     >
 
                         <div ref={wrapperRef} style={style} className="line" />
@@ -181,29 +233,50 @@ export default function Main2() {
                             / 2022.
                         </div>
                         <div className="sub-line" ref={wrapperRef} style={style2} />
-                        <div className="upside" ref={image}>
-                            <img src={UPSIDE}  className="earth"/>
-                            <div>
-
+                        <div className="upside" ref={image1}>
+                            <img src={UPSIDE} className="earth" />
+                            <div className='please'>
+                                <div className='circle'>
+                                    <div className='behance'>
+                                        <p>cooper edmondson behance</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className='p-item'
-                    
+                        ref={hoverDiv2}
+                        onMouseMove={handleMouseMove2}
+                        onMouseLeave={handleMouseLeave2}
                     >
                         <div className="line2" ref={wrapperRef} style={style3} />
                         <div className='proj-title2'>
-                            <div className=' bg-transparent' id='testy'>
-                                Car Car
-                            </div>
+                            <a href='https://www.youtube.com/watch?v=D-7c6eyTDfs'>
+                                <div className=' bg-transparent' id='testy'>
+                                    Car Car
+                                </div>
+                            </a>
                         </div>
                         <div className='proj-desc2' id='dates'>
                             / 2022.
                         </div>
                         <div class="sub-line2" ref={wrapperRef} style={style4} />
-                        
+                        <div className="upside" ref={image2}>
+                            <img src={RIGHTSIDE} className="earth" />
+                            <div className='please'>
+                                <div className='circle'>
+                                    <div className='behances'>
+                                        <p>cooper edmondson behance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className='p-item'>
+                    <div className='p-item'
+                        ref={hoverDiv3}
+                        onMouseMove={handleMouseMove3}
+                        onMouseLeave={handleMouseLeave3}
+                    >
                         <div className="line3" ref={wrapperRef} style={style5} />
                         <div className='proj-title3'>
                             <div className=' bg-transparent' id='testy'>
@@ -214,6 +287,16 @@ export default function Main2() {
                             / 2022.
                         </div>
                         <div className="sub-line3" ref={wrapperRef} style={style6} />
+                        <div className="upside" ref={image3}>
+                            <img src={AYO} className="earth" />
+                            <div className='please'>
+                                <div className='circle'>
+                                    <div className='behancess'>
+                                        <p>cooper edmondson behance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

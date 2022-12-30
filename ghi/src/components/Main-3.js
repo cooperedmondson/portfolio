@@ -21,7 +21,7 @@ export default function Main3() {
             };
         }, []);
 
-        const startThreshold = 1400;
+        const startThreshold = 1500;
         const stopThreshold = 2400;
         const scrollPosition = window.scrollY;
         let divTop;
@@ -45,50 +45,52 @@ export default function Main3() {
 
     const { scrollTest, divStyle, imgStyle } = useScrollTest();
     return (
-        <div>
-            <div id='about'/>
-            <div className='flex gap-10 ' id='intro' >
-                <div className='bg-transparent text-white' >
-                    <h1 className='about'> About Me </h1>
-                </div>
-                <div className='text-white' id='hello'>
-                    <div className='text-container'>
-                        <div className='uppercase' id="p-text">
-                            <div className='b1'>
-                                <div>FullStack</div>
-                                <div>Developer</div>
-                            </div>
-                            <div className='b1'>
-                                <div>BackEnd</div>
-                                <div>Developer</div>
-                            </div>
-                            <div className='b1'>
-                                <div>FrontEnd</div>
-                                <div>Developer</div>
-                            </div>
-                        </div>
-                        <br />
-                        <div className='boh'>
-                            <p className='b2'>
-                                I'm a Junior Full Stack Developer and
-                                a recent graduate of the Software Engineering
-                                program at Hack Reactor. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <>
+         <div id='about'/>
             <div>
-                <div className='moving-container'
-                    style={divStyle}
-                >
-                    <img src={PAPER} className="papa" />
-                    <div>
-                        <img className="fixing" style={imgStyle} src={BAGEL} />
+                <div className='flex gap-10 ' id='intro' >
+                    <div className='bg-transparent text-white' >
+                        <h1 className='about'> About Me </h1>
+                    </div>
+                    <div className='text-white' id='hello'>
+                        <div className='text-container'>
+                            <div className='uppercase' id="p-text">
+                                <div className='b1'>
+                                    <div>FullStack</div>
+                                    <div>Developer</div>
+                                </div>
+                                <div className='b1'>
+                                    <div>BackEnd</div>
+                                    <div>Developer</div>
+                                </div>
+                                <div className='b1'>
+                                    <div>FrontEnd</div>
+                                    <div>Developer</div>
+                                </div>
+                            </div>
+                            <br />
+                            <div className='boh'>
+                                <p className='b2'>
+                                    I'm a Junior Full Stack Developer and
+                                    a recent graduate of the Software Engineering
+                                    program at Hack Reactor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div className='moving-container'
+                        style={divStyle}
+                    >
+                        <img src={PAPER} className="papa" />
+                        <div>
+                            <img className="fixing" style={imgStyle} src={BAGEL} />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

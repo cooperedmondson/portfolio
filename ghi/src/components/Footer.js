@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import BASE from '../assets/BASE.png'
 import PLEASE from '../assets/PLEASE.gif'
 
 
