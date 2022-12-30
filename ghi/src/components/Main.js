@@ -47,6 +47,7 @@ export default function Main() {
             },
             ease: 'power2.inOut',
         });
+        
     }, []);
 
 

@@ -152,8 +152,8 @@ export default function Main2() {
 
     const handleMouseMove2 = (event) => {
         TweenMax.to(image2.current, 0, {
-            x: event.pageX - hoverDiv2.current.offsetLeft - image2.current.offsetWidth / 2 + 130,
-            y: event.pageY - hoverDiv2.current.offsetTop - image2.current.offsetHeight / 2 + 47,
+            x: event.pageX - hoverDiv2.current.offsetLeft - image2.current.offsetWidth / 2 + 129,
+            y: event.pageY - hoverDiv2.current.offsetTop - image2.current.offsetHeight / 2 + 46,
             alpha: 1, // Fade in the image when the mouse moves
         });
     };
@@ -263,7 +263,7 @@ export default function Main2() {
                         <div class="sub-line2" ref={wrapperRef} style={style4} />
                         <div className="upside" ref={image2}>
                             <img src={RIGHTSIDE} className="earth" />
-                            <div className='please'>
+                            <div className='pleases'>
                                 <div className='circle'>
                                     <div className='behances'>
                                         <p>cooper edmondson behance</p>
@@ -288,7 +288,7 @@ export default function Main2() {
                         </div>
                         <div className="sub-line3" ref={wrapperRef} style={style6} />
                         <div className="upside" ref={image3}>
-                            <img src={AYO} className="earth" />
+                            <img src={AYO} className="earths" />
                             <div className='please'>
                                 <div className='circle'>
                                     <div className='behancess'>
